@@ -15,7 +15,7 @@ public class Jmart
         System.out.println(getDiscountPercentage(1000,900));
         System.out.println(getDiscountedPrice(1000,100.0f));
         System.out.println(getOriginalPrice(1000, 0.0f));
-        System.out.println(getComissionMultiplier());
+        System.out.println(getCommissionMultiplier());
         System.out.println(getAdjustedPrice(500));
         System.out.println(getAdminFee(500));
     }
@@ -38,7 +38,7 @@ public class Jmart
     }
     
     public static int getDiscountedPrice(int price, float discountPercentage){
-        if (discountPercentage >= 100.0f){
+        if (discountPercentage > 100.0f){
             return 0;
         }
         float priceFloat = (float) price;
@@ -52,19 +52,19 @@ public class Jmart
         return (int) discountedPriceFloat;
     }
     
-    public static float getComissionMultiplier(){
+    public static float getCommissionMultiplier(){
         return 0.05f;
     }
     
     public static int getAdjustedPrice(int price){
         float priceFloat = (float) price;
-        priceFloat = priceFloat + priceFloat * getComissionMultiplier();
+        priceFloat = priceFloat + priceFloat * getCommissionMultiplier();
         return (int) priceFloat;
     }
     
     public static int getAdminFee(int price){
         float priceFloat = (float) price;
-        return (int) (priceFloat * getComissionMultiplier());
+        return (int) (priceFloat * getCommissionMultiplier());
     }
     
     
