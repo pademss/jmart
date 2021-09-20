@@ -14,7 +14,15 @@ public class Jmart
     }
     
 
-    public static Product create(){
-        return new Product("meja", 5, false, new PriceTag(50000L), ProductCategory.BOOK);
+    public static Product createProduct(){
+        return null;
+    }
+    
+    public static Coupon createCoupun(){
+        return null;
+    }
+    
+    public static ShipmentDuration createShipmentDuration(){
+        return null;
     }
 }
