@@ -30,8 +30,7 @@ public class PriceTag
     }
     
     public double getAdminFee(){
-        getDiscountedPrice();
-        if (price < BOTTOM_PRICE){
+        if (getDiscountedPrice() < BOTTOM_PRICE){
             return BOTTOM_FEE;
         }
         else{
@@ -48,7 +47,7 @@ public class PriceTag
             return 0;
         }
         else {
-            return price - (price * discount);
+            return price * ((100.0 - discount)/100.0);
         }
     }
 }

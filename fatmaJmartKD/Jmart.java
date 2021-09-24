@@ -10,19 +10,20 @@ package fatmaJmartKD;
 public class Jmart
 {
     public static void main(String[] args){
-        
+    
     }
     
 
-    public static Product createProduct(){
+    public static Product createProduct()
+    {
         return null;
     }
-    
-    public static Coupon createCoupun(){
+    public static Coupon createCoupun()
+    {
         return null;
     }
-    
-    public static ShipmentDuration createShipmentDuration(){
+    public static ShipmentDuration createShipmentDuration()
+    {
         return null;
     }
 }

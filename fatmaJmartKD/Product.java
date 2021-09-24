@@ -4,8 +4,8 @@ package fatmaJmartKD;
 /**
  * Write a description of class Product here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author fatma
+ * @version 24/9/2021
  */
 public class Product
 {
@@ -25,7 +25,8 @@ public class Product
         this.priceTag = priceTag;
         this.category = category;
         this.rating = new ProductRating();
-        idCounter++;
         this.id = idCounter;
+        idCounter++;
+        
     }
 }

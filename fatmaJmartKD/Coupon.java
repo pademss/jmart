@@ -43,7 +43,15 @@ public class Coupon
     public double apply(PriceTag priceTag){
         used = true;
         if (type == Type.DISCOUNT){
-            return (this.cut / 100);
+            if (cut >= 100){
+                return (priceTag.getAdjustedPrice() - priceTag.getAdjustedPrice() * (100 / 100));
+            }
+            else if (cut <= 0){
+                return (priceTag.getAdjustedPrice() - priceTag.getAdjustedPrice() * (0 / 100)); 
+            }
+            else{
+                return (priceTag.getAdjustedPrice() - priceTag.getAdjustedPrice() * (cut / 100));
+            }
         }
         else {
             return (priceTag.getAdjustedPrice() * this.cut / 100);
