@@ -7,7 +7,7 @@ package fatmaJmartKD;
  * @author fatma
  * @version 20/9/2021
  */
-public class Coupon
+public abstract class Coupon extends Recognizable implements FileParser
 {
     public enum Type{
         DISCOUNT,
@@ -20,7 +20,8 @@ public class Coupon
     public final double minimum;
     private boolean used;
     
-    public Coupon(String name, int code, Type type, double cut, double minimum){
+    public Coupon(int id, String name, int code, Type type, double cut, double minimum){
+        super(id);
         this.name = name;
         this.code = code;
         this.type = type;
@@ -56,5 +57,10 @@ public class Coupon
         else {
             return (priceTag.getAdjustedPrice() * this.cut / 100);
         }
+    }
+    
+    @Override
+    public boolean read(String content){
+        return false;
     }
 }
