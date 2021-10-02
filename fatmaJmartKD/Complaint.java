@@ -1,5 +1,5 @@
 package fatmaJmartKD;
-
+import java.util.Date;
 
 /**
  * Write a description of class Complaint here.
@@ -9,7 +9,7 @@ package fatmaJmartKD;
  */
 public class Complaint extends Recognizable implements FileParser
 {
-    public String date;
+    public Date date;
     public String desc;
     
     /**
@@ -19,7 +19,7 @@ public class Complaint extends Recognizable implements FileParser
     {
         super(id);
         this.desc = desc;
-        this.date = "hai";
+        this.date = new Date();
     }
     
     

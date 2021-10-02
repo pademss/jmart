@@ -1,5 +1,6 @@
 package fatmaJmartKD;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Write a description of class Store here.
@@ -9,6 +10,8 @@ package fatmaJmartKD;
  */
 public class Store extends Recognizable implements FileParser
 {
+    public static final String REGEX_NAME = "^[a-z]((?!^\\s{2}).){4,20}$";
+    public static final String REGEX_PHONE = "[0-9]{9,12}";
     public String name;
     public String address;
     public String phoneNumber;
@@ -40,5 +43,21 @@ public class Store extends Recognizable implements FileParser
         "address: " + this.address + "\n" +
         "phoneNumber: " + this.phoneNumber + "\n";
     }
+    
+    public boolean validate(){
+        Pattern pattern = Pattern.compile(REGEX_NAME);
+        Matcher matcher = pattern.matcher(this.name);
+
+        Pattern pattern2 = Pattern.compile(REGEX_PHONE);
+        Matcher matcher2 = pattern.matcher(this.phoneNumber);
+        
+        if(matcher.find() && matcher2.find()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    
+}
 
 }
