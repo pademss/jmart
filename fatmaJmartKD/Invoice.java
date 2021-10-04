@@ -1,5 +1,6 @@
 package fatmaJmartKD;
 import java.util.Date;
+import java.util.ArrayList;
 
 /**
  * Abstract class Invoice - write a description of the class here
@@ -26,12 +27,13 @@ public abstract class Invoice extends Recognizable implements FileParser
         GOOD;
     }
     
-    public Date date;
+    public final Date date;
     public int buyerId;
     public int productId;
     public int complaintId;
     public Rating rating;
     public Status status;
+    ArrayList<Record> history;
     
     protected Invoice(int id, int buyerId, int productId){
         super(id);
@@ -49,5 +51,14 @@ public abstract class Invoice extends Recognizable implements FileParser
     
     
     public abstract double getTotalPay();
+    
+    
+    public class Record{
+        public Date date;
+        public String message;
+        public Status status;
+    }
+    
+    
     
 }

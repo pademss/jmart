@@ -1,5 +1,6 @@
 package fatmaJmartKD;
 import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * Write a description of class Complaint here.
@@ -9,7 +10,7 @@ import java.util.Date;
  */
 public class Complaint extends Recognizable implements FileParser
 {
-    public Date date;
+    public final Date date;
     public String desc;
     
     /**
@@ -26,5 +27,12 @@ public class Complaint extends Recognizable implements FileParser
     @Override
     public boolean read(String content){
         return false;
+    }
+    
+    @Override
+    public String toString(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String dateComp = dateFormat.format(this.date);
+        return "Complaint{date= " + dateComp + ", desc= '" + this.desc +"'}";
     }
 }
