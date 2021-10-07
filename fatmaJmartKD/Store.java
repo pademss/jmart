@@ -49,7 +49,7 @@ public class Store extends Recognizable implements FileParser
         Matcher matcher = pattern.matcher(this.name);
 
         Pattern pattern2 = Pattern.compile(REGEX_PHONE);
-        Matcher matcher2 = pattern.matcher(this.phoneNumber);
+        Matcher matcher2 = pattern2.matcher(this.phoneNumber);
         
         if(matcher.find() && matcher2.find()){
             return true;

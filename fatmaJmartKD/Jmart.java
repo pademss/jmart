@@ -16,10 +16,12 @@ public class Jmart
         System.out.println(store);
         System.out.println(store.validate()); */
         
-        Account account = new Account(1, "fatma", "fatma.putri@ui.ac.id", "OOPLetsgo123");
+    /*    Account account = new Account(1, "fatma", "fatma.putri@ui.ac.id", "OOPLetsgo123");
         System.out.println(account.validate());
         Complaint complaint = new Complaint(2, "lama nyampe");
-        System.out.println(complaint.toString());
+        System.out.println(complaint.toString()); */
+    	
+    	System.out.println("Hello from Eclipse!");
     }
     
 
