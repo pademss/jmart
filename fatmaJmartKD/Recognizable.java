@@ -7,12 +7,20 @@ package fatmaJmartKD;
  * @author fatma
  * @version 25/9/2021
  */
-public class Recognizable
+public class Recognizable implements Comparable <Recognizable>
 {
     public final int id;
     
     protected Recognizable(int id){
         this.id = id;
+    }
+    
+    public static <T extends Recognizable> int setClosingId(Class<T> clazz, int id) {
+    	return 0;
+    }
+    
+    public static <T extends Recognizable> int getClosingId(Class<T> clazz) {
+    	return 0;
     }
     
     public boolean equals(Object object){
@@ -37,5 +45,10 @@ public class Recognizable
         else{
             return false;
         }
+    }
+    
+    @Override
+    public int compareTo(Recognizable recognizable) {
+    	return Integer.compare(id, recognizable.id);
     }
 }
