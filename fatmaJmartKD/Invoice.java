@@ -36,7 +36,7 @@ public abstract class Invoice extends Recognizable implements FileParser
     ArrayList<Record> history;
     
     protected Invoice(int id, int buyerId, int productId){
-        super(id);
+        
         this.buyerId = buyerId;
         this.productId = productId;
         this.date = new Date();

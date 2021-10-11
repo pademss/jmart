@@ -18,7 +18,7 @@ public class Complaint extends Recognizable implements FileParser
      */
     public Complaint(int id, String desc)
     {
-        super(id);
+        
         this.desc = desc;
         this.date = new Date();
     }
