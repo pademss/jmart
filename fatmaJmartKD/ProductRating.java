@@ -11,31 +11,33 @@ public class ProductRating
 {
     private long total;
     private long count;
-    
-    public ProductRating(){
+    /**
+     * Constructor for objects of class ProductRating
+     */
+    public ProductRating()
+    {
         this.total = 0;
         this.count = 0;
     }
-    
-    public void insert (int rating){
-        this.total += rating;
-        this.count++;
+    public void insert(int rating)
+    {
+        total += rating;
+        count++;
     }
-    
-    public double getAverage(){
-        if (count == 0){
-            return 0;
+    public double getAverage()
+    {
+        if(count == 0){
+            return 0.0;
+        }else{
+            return total/(double)count;
         }
-        else{
-            return this.total / this.count;
-        }
     }
-    
-    public long getCount(){
-        return this.count;
+    public long getCount()
+    {
+        return count;
     }
-    
-    public long getTotal(){
-        return this.total;
+    public long getTotal()
+    {
+        return total;
     }
 }

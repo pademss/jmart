@@ -8,31 +8,23 @@ import java.text.SimpleDateFormat;
  * @author fatma
  * @version 25/9/2021
  */
-public class Complaint extends Recognizable implements FileParser
+public class Complaint extends Serializable
 {
-    public final Date date;
+    public Date date;
     public String desc;
     
-    /**
-     * Constructor for objects of class Complaint
-     */
-    public Complaint(int id, String desc)
-    {
-        
+    public Complaint(String desc){
         this.desc = desc;
         this.date = new Date();
+        System.out.println(date);
     }
-    
-    
-    @Override
-    public boolean read(String content){
-        return false;
-    }
-    
     @Override
     public String toString(){
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        String dateComp = dateFormat.format(this.date);
-        return "Complaint{date= " + dateComp + ", desc= '" + this.desc +"'}";
+        //Complaint{date=10/03/2021, desc='Pengiriman tidak cepat, kurir tersesat'}
+        //Complaint{date=25/05/2021, desc='Barang yang dikirimkan tidak sesuai pesanan'}
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        return ("Complaint{date=" + df.format(date) + ", desc='" + desc + "'}");
     }
+
+    
 }
