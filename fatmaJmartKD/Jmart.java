@@ -1,5 +1,6 @@
 package fatmaJmartKD;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.io.BufferedReader;
@@ -14,7 +15,7 @@ import com.google.gson.stream.JsonReader;
  * Write a description of class Jmart here.
  *
  * @author fatma
- * @version 11/9/2021
+ * @version 8/11/2021
  */
 
 public class Jmart{
@@ -48,16 +49,34 @@ public class Jmart{
 	        }
 	        return products;
 	}
+	
+	public static List<Product> filterByAccountId(List<Product> list, int accountId, int page, int pageSize){
+		Predicate<Product> predicate = i -> (i.accountId == accountId);
+        return paginate(list, page, pageSize, predicate);
+	}
+	
+	public static List<Product> filterByName(List<Product> list, String search, int page, int pageSize){
+		Predicate<Product> predicate = i -> (i.name.toLowerCase().contains(search.toLowerCase()));
+        return paginate(list, page, pageSize, predicate);
+	}
+	
+	private static List<Product> paginate(List<Product> list, int page, int pageSize, Predicate<Product> pred){
+		return list.stream().filter(i -> pred.predicate(i)).skip(page * pageSize).limit(pageSize).collect(Collectors.toList());
+	}
     
 	public static void main(String[] args) {
 		try{
             // sesuaikan argument method read sesuai dengan lokasi resource
             List<Product> list = read("C:\\Users\\Flex\\Documents\\Semester 5\\jmart\\randomProductList.json");
-            List<Product> filtered = filterByPrice(list, 0.0, 20000.0);
-            filtered.forEach(product -> System.out.println(product.price));
-        }catch (Throwable t)
-        {
-            t.printStackTrace();
+//            List<Product> resultFilterByPrice = filterByPrice(list, 0.0, 20000.0);
+//            resultFilterByPrice.forEach(product -> System.out.println(product.price));
+            List<Product> resultFilterByName = filterByName(list, "gtx", 1, 5);  
+            resultFilterByName.forEach(product -> System.out.println(product.name));
+//            List<Product> resultFilterByAccountId  = filterByAccountId(list, 1, 0, 5);  
+//            resultFilterByAccountId.forEach(product -> System.out.println(product.name));
+        }
+		catch (Throwable ex){
+            ex.printStackTrace();
         }
 		
 //		System.out.println("account id:" + new Account(null, null, null, -1).id);
@@ -78,12 +97,14 @@ public class Jmart{
             while(reader.hasNext()){
                 products.add(gson.fromJson(reader, Product.class));
             }
-        }catch (Exception e){
-            e.printStackTrace();
+        }catch (IOException ex){
+            ex.printStackTrace();
         }
         return products;
     }
 }
+
+
     
     
     
