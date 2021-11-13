@@ -34,5 +34,13 @@ public class Account extends Serializable
             return false;
         }
     }
+    
+    @Override
+    public String toString(){
+        return
+        "name : " + this.name + "\n" +
+        "email: " + this.email +" \n"+
+        "password: " + this.password;
+    }
 
 }
