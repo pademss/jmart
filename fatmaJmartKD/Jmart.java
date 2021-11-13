@@ -66,18 +66,35 @@ public class Jmart{
     
 	public static void main(String[] args) {
 		try{
-            // sesuaikan argument method read sesuai dengan lokasi resource
-            List<Product> list = read("C:\\Users\\Flex\\Documents\\Semester 5\\jmart\\randomProductList.json");
-//            List<Product> resultFilterByPrice = filterByPrice(list, 0.0, 20000.0);
-//            resultFilterByPrice.forEach(product -> System.out.println(product.price));
-            List<Product> resultFilterByName = filterByName(list, "gtx", 1, 5);  
-            resultFilterByName.forEach(product -> System.out.println(product.name));
-//            List<Product> resultFilterByAccountId  = filterByAccountId(list, 1, 0, 5);  
-//            resultFilterByAccountId.forEach(product -> System.out.println(product.name));
-        }
-		catch (Throwable ex){
-            ex.printStackTrace();
-        }
+			String filepath = "C:\\Users\\Flex\\Documents\\Semester 5\\jmart\\account.json" ;
+
+			JsonTable<Account> tableAccount = new JsonTable<>(Account.class, filepath);
+			tableAccount.add(new Account("name", "email", "password"));
+			tableAccount.writeJson();
+
+			tableAccount = new JsonTable<>(Account.class, filepath);
+			tableAccount.forEach(account -> System.out.println(account.toString()));
+		}
+
+		catch (Throwable t)
+		{
+			t.printStackTrace();
+		}
+		
+		
+//		try{
+//            // sesuaikan argument method read sesuai dengan lokasi resource
+//            List<Product> list = read("C:\\Users\\Flex\\Documents\\Semester 5\\jmart\\randomProductList.json");
+////            List<Product> resultFilterByPrice = filterByPrice(list, 0.0, 20000.0);
+////            resultFilterByPrice.forEach(product -> System.out.println(product.price));
+//            List<Product> resultFilterByName = filterByName(list, "gtx", 1, 5);  
+//            resultFilterByName.forEach(product -> System.out.println(product.name));
+////            List<Product> resultFilterByAccountId  = filterByAccountId(list, 1, 0, 5);  
+////            resultFilterByAccountId.forEach(product -> System.out.println(product.name));
+//        }
+//		catch (Throwable ex){
+//            ex.printStackTrace();
+//        }
 		
 //		System.out.println("account id:" + new Account(null, null, null, -1).id);
 //		System.out.println("account id:" + new Account(null, null, null, -1).id);
