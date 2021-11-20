@@ -1,5 +1,6 @@
 package com.fatmaJmartKD;
 
+import com.fatmaJmartKD.dbjson.Serializable;
 
 /**
  * Write a description of class Coupon here.

@@ -10,7 +10,7 @@ public class PhoneTopUp extends Invoice{
 	}
 	
 	public double getTotalPay(Product product) {
-		return 0;
+		return Treasury.getAdjustedPrice(product.price, product.discount);
 	}
 	
 }

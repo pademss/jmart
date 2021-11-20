@@ -1,5 +1,8 @@
 package com.fatmaJmartKD;
 import java.util.Date;
+
+import com.fatmaJmartKD.dbjson.Serializable;
+
 import java.text.SimpleDateFormat;
 
 /**

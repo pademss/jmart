@@ -10,6 +10,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
+
+import com.fatmaJmartKD.dbjson.JsonDBEngine;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 
@@ -29,7 +31,9 @@ public class Jmart{
 	
 	
 	public static void main(String[] args){
-		SpringApplication.run(Jmart.class, args);
+        JsonDBEngine.Run(Jmart.class);
+        SpringApplication.run(Jmart.class, args);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> JsonDBEngine.join()));
 //		try {
 //			String filepath ="C:\\Users\\Flex\\Documents\\Semester 5\\jmart\\randomPaymentList.json";
 //			JsonTable<Payment> table = new JsonTable<>(Payment.class, filepath);

@@ -2,6 +2,8 @@ package com.fatmaJmartKD;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.fatmaJmartKD.dbjson.Serializable;
+
 /**
  * Write a description of class Account here.
  *
@@ -15,7 +17,7 @@ public class Account extends Serializable
     public String name;
     public String email;
     public String password;
-//    public Store store;
+    public Store store;
     public double balance;
     
     public Account(String name, String email, String password, double balance){
