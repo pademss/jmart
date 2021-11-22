@@ -55,25 +55,25 @@ public class Jmart{
 //        }
 	}
 	
-	public static boolean paymentTimekeeper(Payment payment) {
-		 Payment.Record record = payment.history.get(payment.history.size() - 1);
-	        long elapsed = System.currentTimeMillis() - record.date.getTime();
-	        if (record.status.equals(Invoice.Status.WAITING_CONFIRMATION) && (elapsed > WAITING_CONF_LIMIT_MS)) {
-	            record.status = Invoice.Status.FAILED;
-	            return true;
-	        } else if (record.status.equals(Invoice.Status.ON_PROGRESS) && (elapsed > ON_PROGRESS_LIMIT_MS)) {
-	            record.status = Invoice.Status.FAILED;
-	            return true;
-	        } else if (record.status.equals(Invoice.Status.ON_DELIVERY) && (elapsed > ON_PROGRESS_LIMIT_MS)) {
-	            record.status = Invoice.Status.DELIVERED;
-	            return true;
-	        } else if (record.status.equals(Invoice.Status.DELIVERED) && (elapsed > DELIVERED_LIMIT_MS)) {
-	            record.status = Invoice.Status.FINISHED;
-	            return true;
-	        } else {
-	            return false;
-	}
-}
+//	public static boolean paymentTimekeeper(Payment payment) {
+//		 Payment.Record record = payment.history.get(payment.history.size() - 1);
+//	        long elapsed = System.currentTimeMillis() - record.date.getTime();
+//	        if (record.status.equals(Invoice.Status.WAITING_CONFIRMATION) && (elapsed > WAITING_CONF_LIMIT_MS)) {
+//	            record.status = Invoice.Status.FAILED;
+//	            return true;
+//	        } else if (record.status.equals(Invoice.Status.ON_PROGRESS) && (elapsed > ON_PROGRESS_LIMIT_MS)) {
+//	            record.status = Invoice.Status.FAILED;
+//	            return true;
+//	        } else if (record.status.equals(Invoice.Status.ON_DELIVERY) && (elapsed > ON_PROGRESS_LIMIT_MS)) {
+//	            record.status = Invoice.Status.DELIVERED;
+//	            return true;
+//	        } else if (record.status.equals(Invoice.Status.DELIVERED) && (elapsed > DELIVERED_LIMIT_MS)) {
+//	            record.status = Invoice.Status.FINISHED;
+//	            return true;
+//	        } else {
+//	            return false;
+//	}
+//}
 }
 	
 //    public static List<Product> filterByCategory(List<Product> list, ProductCategory category){

@@ -3,6 +3,9 @@ import com.fatmaJmartKD.Account;
 import com.fatmaJmartKD.Store;
 import com.fatmaJmartKD.dbjson.JsonAutowired;
 import com.fatmaJmartKD.dbjson.JsonTable;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import java.util.regex.Pattern;
 
@@ -41,8 +44,21 @@ public class AccountController implements BasicGetController<Account>
 	                    return null;
 	                }
 	            }
+	            try {
+	                MessageDigest md;
+	                md = MessageDigest.getInstance("MD5");
+	                byte[] messageDigest = md.digest(password.getBytes());
+	                BigInteger no = new BigInteger(1, messageDigest);
+	                String hashtext = no.toString(16);
+	                while (hashtext.length() < 32) {
+	                    hashtext = "0" + hashtext;
+	                }
 	            return new Account(name, email, password, 0);
-	        }
+	            } catch (NoSuchAlgorithmException e) {
+	                // TODO Auto-generated catch block
+	                e.printStackTrace();
+	            }
+	            }
 	        return null;
 	}
 	
@@ -61,10 +77,24 @@ public class AccountController implements BasicGetController<Account>
 			@RequestParam String email, 
 			@RequestParam String password
 	) {
+		try {
+            MessageDigest md;
+            md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(password.getBytes());
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
 		for(Account account : accountTable){
             if (account.email.equals(email) && account.password.equals(password)) {
                 return account;
             }
+        }
+		}
+		catch (NoSuchAlgorithmException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
         return null;
 		
