@@ -19,7 +19,7 @@ public abstract class Invoice extends Serializable
 //    public ArrayList<Record> history = new ArrayList<>();
     public int productId;
     public Rating rating;
-    enum Status{
+    public enum Status{
         WAITING_CONFIRMATION, CANCELLED, ON_PROGRESS, ON_DELIVERY,
         COMPLAINT, FINISHED, FAILED, DELIVERED
     }
