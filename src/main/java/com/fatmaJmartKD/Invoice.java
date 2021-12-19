@@ -6,7 +6,7 @@ import com.fatmaJmartKD.dbjson.Serializable;
 import java.util.ArrayList;
 
 /**
- * Abstract class Invoice - write a description of the class here
+ * Class untuk invoice
  *
  * @author fatma
  * @version 27/9/2021
@@ -16,7 +16,6 @@ public abstract class Invoice extends Serializable
     public int buyerId;
     public int complaintId;
     public final Date date;
-//    public ArrayList<Record> history = new ArrayList<>();
     public int productId;
     public Rating rating;
     public enum Status{

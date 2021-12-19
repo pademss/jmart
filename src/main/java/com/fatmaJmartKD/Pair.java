@@ -1,5 +1,12 @@
 package com.fatmaJmartKD;
 
+/**
+ * Class Pair 
+ *
+ * @author Fatma Putri Ramadhani
+ *
+ */
+
 public class Pair<T, U> {
 	public T first;
 	public U second;

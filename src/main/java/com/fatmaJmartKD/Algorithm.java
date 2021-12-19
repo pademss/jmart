@@ -1,6 +1,13 @@
 package com.fatmaJmartKD;
 
 import java.util.ArrayList;
+
+/**
+ * Algoritma untuk menjalankan beberapa fungsi pada aplikasi
+ *
+ * @author fatma
+ */
+
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;

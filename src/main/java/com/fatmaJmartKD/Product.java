@@ -3,7 +3,7 @@ package com.fatmaJmartKD;
 import com.fatmaJmartKD.dbjson.Serializable;
 
 /**
- * Write a description of class Product here.
+ * Class untuk menyimpan informasi terkait product
  *
  * @author fatma
  * @version 24/9/2021

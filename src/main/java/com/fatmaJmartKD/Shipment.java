@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Write a description of class Shipment here.
+ * Class untuk mengatur shipment seperti status, jenis, dan alamatnya.
  *
  * @author fatma
  * @version 27/9/2021

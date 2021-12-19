@@ -2,7 +2,7 @@ package com.fatmaJmartKD;
 
 
 /**
- * Abstract class Transaction - write a description of the class here
+ * Abstract class Transaction - Untuk melakukan transaksi
  *
  * @author fatma
  * @version 25/9/2021

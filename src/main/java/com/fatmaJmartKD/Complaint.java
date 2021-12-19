@@ -6,7 +6,7 @@ import com.fatmaJmartKD.dbjson.Serializable;
 import java.text.SimpleDateFormat;
 
 /**
- * Write a description of class Complaint here.
+ * Complaint untuk menghandle jika ada complain terhadap product
  *
  * @author fatma
  * @version 25/9/2021

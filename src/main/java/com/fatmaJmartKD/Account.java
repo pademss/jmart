@@ -27,6 +27,7 @@ public class Account extends Serializable
         this.balance = balance;
     }
     
+    //validasi email sesuai dengan regex
     public boolean validate(){
         Pattern patternEmail = Pattern.compile(REGEX_EMAIL);
         Pattern patternPass = Pattern.compile(REGEX_PASSWORD);

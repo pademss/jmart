@@ -1,7 +1,7 @@
 package com.fatmaJmartKD;
 
 /**
- * Write a description of class Product here.
+ * Write a description of class Treasury here.
  *
  * @author fatma
  * @version 5/11/2021

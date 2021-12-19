@@ -1,5 +1,12 @@
 package com.fatmaJmartKD.controller;
 
+/**
+ * Class CouponController - Controller terkait kupon
+ *
+ * @author Fatma Putri Ramadhani
+ *
+ */
+
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;

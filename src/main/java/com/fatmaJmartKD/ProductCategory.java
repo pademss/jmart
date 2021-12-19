@@ -2,7 +2,7 @@ package com.fatmaJmartKD;
 
 
 /**
- * Enumeration class ProductCategory - write a description of the enum class here
+ * Enumeration class ProductCategory 
  *
  * @author fatma
  * @version 18/9/2021

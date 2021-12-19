@@ -2,7 +2,7 @@ package com.fatmaJmartKD;
 
 
 /**
- * Write a description of class ProductRating here.
+ * Class untuk menghitung rating dari product
  *
  * @author fatma
  * @version 18/9/2021

@@ -3,7 +3,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Write a description of class Store here.
+ * Class untuk menyimpan informasi store
  *
  * @author fatma
  * @version 25/9/2021
